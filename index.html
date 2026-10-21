@@ -1,0 +1,9 @@
+<!doctype html><meta charset="utf-8"><title>DW boot</title>
+<body style="margin:0;background:#141414;color:#eee;font:20px sans-serif">
+<h1 style="margin:24px">Deadlock Walker</h1>
+<p style="margin:24px" id="t">проверка связи с dw…</p>
+<script>
+const api = "http://127.0.0.1:8765/";
+fetch(api + "ping?from=pages").then(r => r.text()).then(x => { t.textContent = "dw на связи"; document.title = "DW ok"; },
+  e => { t.textContent = "нет связи: " + e; document.title = "DW fetch err"; });
+</script>
